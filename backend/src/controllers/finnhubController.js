@@ -31,10 +31,9 @@ module.exports.symbolSearch = async (req, res) => {
 }
 
 module.exports.marketStatus = async (req, res) => {
-    const { exchange } = req.query
-    // finnhubClient.marketStatus({'exchange': exchange}, (error, data, response) => {
     finnhubClient.marketNews("general", {}, (error, data, response) => {
         if (!error) return res.status(200).json(data);
         return res.status(404).send({ response })
     });
 }
+

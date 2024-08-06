@@ -3,7 +3,7 @@ import Finnhub from './routes/Finnhub';
 
 function App() {
   return (
-    <div className="App">
+    <div className="App bg-black-900 h-screen">
       <Router>
         <Finnhub/>
       </Router>
