@@ -1,22 +1,7 @@
+const axios = require('axios');
+// var request = require('request');
 module.exports.test = async (req, res, next) => {
     res.send('heeeloo')
-}
-
-module.exports.realtime = async (req, res, next) => {
-    const { symbol } = req.query;
-    try {
-        const response = await axios.get(BASE_URL, {
-            params: {
-                function: 'TIME_REALTIME',
-                symbol,
-                apikey: process.env.AlphaVantage,
-            },
-        });
-        res.json(response.data);
-    } catch (error) {
-        console.error('Error fetching real-time data', error);
-        res.status(500).json({ error: 'Error fetching data' });
-    }
 }
 
 module.exports.historical = async (req, res, next) => {
@@ -41,3 +26,26 @@ module.exports.historical = async (req, res, next) => {
         res.status(500).json({ error: 'Error fetching data' });
     }
 }
+
+
+// Realtime Stock Price
+module.exports.realtime = async (req, res) => {
+    
+    var url = `https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol=IBM&interval=1min&apikey=${process.env.AlphaVantage}`;
+    res.json(
+        request.get({
+            url: url,
+            json: true,
+            headers: {'User-Agent': 'request'}
+          }, (err, res, data) => {
+            if (err) {
+              console.log('Error:', err);
+            } else if (res.statusCode !== 200) {
+              console.log('Status:', res.statusCode);
+            } else {
+              // data is successfully parsed as a JSON object:
+              console.log(data);
+            }
+        })
+    )
+};

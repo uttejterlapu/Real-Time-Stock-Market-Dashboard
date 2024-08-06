@@ -11,10 +11,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "axios": "^1.7.3",
     "backend-folders": "^1.0.2",
     "cors": "^2.8.5",
     "dotenv": "^16.4.5",
     "express": "^4.19.2",
-    "nodemon": "^3.1.4"
+    "finnhub": "^1.2.18",
+    "nodemon": "^3.1.4",
+    "request": "^2.88.2"
   }
 }
