@@ -1,2 +1,4 @@
-let x = process.env.REACT_APP_ENDPOINTURL;
-console.log(x)
+const BACKENDURL = 'http://localhost:5000';
+module.exports = {
+    BACKENDURL
+}
