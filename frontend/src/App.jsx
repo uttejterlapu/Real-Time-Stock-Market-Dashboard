@@ -10,7 +10,7 @@ function App() {
       <Router>
         <Finnhub/>
       </Router>
-      <Footer/>
+      {/* <Footer/> */}
     </div>
   );
 }
