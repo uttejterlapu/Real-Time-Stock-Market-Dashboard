@@ -10,7 +10,7 @@ const NewsDetail = () => {
     }
 
     return (
-        <div className="relative pb-9 bg-gray-900 text-white">
+        <div className="relative pb-9 bg-gray-900 text-white h-screen">
             <div className="relative">
                 <img
                     src={item.image}
