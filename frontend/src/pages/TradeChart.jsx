@@ -3,7 +3,7 @@ import { Line } from 'react-chartjs-2';
 import Chart from 'chart.js/auto'; // Import Chart.js
 import 'chartjs-adapter-date-fns'; // Import the date adapter
 import Spinner from '../components/Spinner'; // Import the Spinner component
-import { BACKENDURL } from '../constant';
+import BACKENDURL from '../constant';
 
 const TradeChart = () => {
     const [trades, setTrades] = useState([]);
@@ -120,7 +120,7 @@ const TradeChart = () => {
     if (loading) return <Spinner height="300px" />;
 
     return (
-        <div className="px-6 bg-gray-900 shadow-md rounded-lg py-20">
+        <div className="px-6 bg-gray-900 shadow-md py-20 h-screen">
             <h1 className="text-xl font-semibold mb-4 text-white">Trade Chart</h1>
             <div className="relative w-full h-80">
                 <Line ref={chartRef} data={chartData} options={chartOptions} />
